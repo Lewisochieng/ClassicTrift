@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container mt-5">
+    <h2>Your payment will be processed shortly...</h2>
+    <p>Thank you for your purchase!</p>
+    <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-sm">Return to Home</a>
+</div>
+{% endblock %}

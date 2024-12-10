@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container mt-5">
+    <h2>Pay with M-Pesa</h2>
+    <form method="POST" action="{% url 'stk' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="number" class="form-control" id="phone" name="phone" value="254" placeholder="e.g. 254712345678" required>
+        </div>
+        <div class="mb-3">
+            <label for="amount" class="form-label">Amount</label>
+            <input type="text" class="form-control" id="amount" name="amount" required>
+        </div>
+        <button type="submit" class="btn btn-outline-success btn-sm">Pay via mpesa.</button>
+    </form>
+</div>
+
+
+{% endblock %}

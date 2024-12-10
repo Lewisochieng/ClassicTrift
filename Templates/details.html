@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<head>
+    <title>{{ product.name }}</title>
+
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Product Details Card -->
+        <div class="card shadow-sm">
+            <!-- Carousel for Product Images -->
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Main Image -->
+                    <div class="carousel-item active">
+                        <img src="{{ product.image.url }}" class="d-block w-100 img-fluid" alt="{{ product.name }}" style="height: 400px; object-fit: cover;">
+                    </div>
+                    <!-- Placeholder for Additional Images -->
+                    {% for image in product.additional_images.all %}
+                    <div class="carousel-item">
+                        <img src="{{ image.image.url }}" class="d-block w-100 img-fluid" alt="Additional image of {{ product.name }}" style="height: 400px; object-fit: cover;">
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- Product Details -->
+            <div class="card-body">
+                <h3 class="card-title text-center">{{ product.name }}</h3>
+                <p class="card-text text-muted text-center">{{ product.description }}</p>
+                <p class="card-text fw-bold text-center ">Price: Ksh {{ product.price }}</p>
+                <hr>
+                <!-- Additional Details Section -->
+                <div class="mt-4">
+                    <h5 class="fw-bold">Product Features:</h5>
+                    <ul class="list-group list-group-flush">
+                        {% for feature in product.features.all %}
+                        <li class="list-group-item">{{ feature.description }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- Back Button -->
+                <div class="text-center mt-4">
+                    <a href="{% url 'categories' %}" class="btn btn-outline-secondary">Back to Categories</a>
+                    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-outline-secondary">add to cart</a>
+                    <a href="{% url 'cart' %}" class="btn btn-outline-secondary">View cart</a>
+                </div>
+            </div>
+        </div>
+        <!-- Related Products Section -->
+        <div class="mt-5">
+            <h4 class="text-center m-4">Related Products</h4>
+            <div class="row g-1">
+                {% for related_product in related_products %}
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card shadow-sm">
+                        <img src="{{ related_product.image.url }}" class="card-img-top img-fluid" alt="{{ related_product.name }}" style="height: 200px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6 class="card-title text-truncate">{{ related_product.name }}</h6>
+                            <p class="text-black fw-bold">Ksh {{ related_product.price }}</p>
+                            <a href="{% url 'details' related_product.id %}" class="btn btn-sm btn-outline-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+{% endblock %}

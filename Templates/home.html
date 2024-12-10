@@ -1,0 +1,267 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <body class="index-page">
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+          <img src="{% static 'img/hero-carousel/classicclotes.jpeg' %}" alt="">
+          <div class="carousel-container">
+            <h2>Welcome to <span>CLASSIC THRIFT</span></h2>
+            <p>Welcome to Classic Thrift Boutique – your ultimate destination for chic, affordable fashion! We’re passionate about bringing you a curated collection of trendy, timeless pieces at prices that make style accessible to everyone. Whether you're hunting for the perfect casual look, elegant work wear, or unique accessories to elevate your wardrobe, we’ve got something for every style and occasion.</p>
+            <a href="{% url 'categories' %}" class="btn-get-started">Shop with us!</a>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class = "carousel-item" >
+          <img src="{% static 'img/hero-carousel/classic%20trift%20store.jpeg' %}" alt="">
+          <div class="carousel-container">
+            <h2>Why Shop with Us?</h2>
+            <p>Each piece is handpicked to reflect the latest trends and classic styles, ensuring you find unique items that fit your vibe. Look amazing without breaking the bank! We believe that great fashion should be affordable and accessible. Embrace the thrill of thrift! Our pre-loved items allow you to make sustainable choices without sacrificing style.</p>
+            <a href = "{% url 'categories' %}" class= "btn-get-started">Shop with us!</a>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class = "carousel-item">
+          <img src="{% static 'img/hero-carousel/classicthrift.jpeg' %}" alt="">
+          <div class="carousel-container">
+            <h2>Style Reimagined. Affordable Luxury for Everyone.</h2>
+            <p>Discover timeless fashion with a modern twist at Classic Thrift. We curate high-quality thrift pieces that make you stand out without breaking the bank. Dive into a world where style meets sustainability and explore fashion that is uniquely yours.</p>
+            <a href = "{% url 'about' %}" class="btn-get-started">Shop with us!</a>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+
+      <div class="featured container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="featured-item position-relative">
+              <div class="icon"></div>
+              <h4><a href="{% url 'about' %}" class="stretched-link">New Arrivals Weekly</a></h4>
+              <p>we are constantly updating our inventory with fresh finds, so there’s always something new and exciting waiting for you. Check back often to discover the latest arrivals and enjoy exclusive deals!</p>
+            </div>
+          </div><!-- End Featured Item -->
+
+          <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="featured-item position-relative">
+              <div class="icon"></div>
+              <h4><a href="{% url 'collection' %}" class="stretched-link">Discover Your Style</a></h4>
+              <p>Browse through our collections and find pieces that speak to you, whether you’re shopping for basics, statement pieces, or anything in between. Classic Thrift Boutique is here to help you express yourself through fashion.</p>
+            </div>
+          </div><!-- End Featured Item -->
+
+          <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="featured-item position-relative">
+              <div class="icon"></div>
+              <h4><a href="{% url 'categories' %}" class="stretched-link">Shop Now and Unleash Your Style!</a></h4>
+              <p>Our unique accessories will ultimately elevate your wardrobe, we’ve got something for every style and occasion.</p>
+            </div>
+          </div><!-- End Featured Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="{% static 'img/classictrift1.jpeg' %}" class="img-fluid w-100" alt="">
+          </div>
+          <div class="col-lg-6 order-2 order-lg-1 content">
+            <h3>Explore Our Top Collections</h3>
+            <p class= "fst-italic" > From vintage classics to trendy pieces, our collections are handpicked to offer something special for every style and occasion. Browse our exclusive selections to find pieces that fit your personality and style. At Classic Thrift, we value uniqueness, quality, and sustainability. Each piece is handpicked with the utmost care, ensuring that our customers find something truly special every time they shop with us. We are passionate about fashion that respects people, the planet, and your pocket </p>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> <span>Step into a world of curated fashion with our diverse collections.</span> </li>
+              <li><i class="bi bi-check2-all"></i> <span>Vintage gems to the latest styles.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Explore pieces that are as unique as you are. </span> </li>
+            </ul>
+
+            <p> With each purchase, you are not just buying clothes but supporting sustainable fashion and a greener planet. Our collections reflect our commitment to quality, style and a brighter future. Explore your next fashion favourite today!
+             </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Services Section -->
+    <section id= "services" class= "services section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Vintage Treasures</h3>
+              </a>
+              <p>A collection of timeless pieces that bring the charm of the past into today’s wardrobe.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Modern Essentials</h3>
+              </a>
+              <p> Chic, contemporary and stylish. These essentials are must-haves for the modern wardrobe.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Seasonal Picks</h3>
+              </a>
+              <p> Browse our seasonal picks that keep you stylish and comfortable all year round. </p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-bounding-box-circles"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Quality Thrift, Sustainable Choice</h3>
+              </a>
+              <p>Every item we offer is carefully selected to meet our standards for quality, style, and value. We strive to promote sustainable fashion by giving new life to pre-loved items and reducing fashion waste. Our goal is to empower our customers to look great and feel great about their choices. </p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-calendar4-week"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Home Decor & Gifts</h3>
+              </a>
+              <p>Explore our range of home decor and gift items, perfect for adding a touch of classic charm to any space. Whether you’re looking for vintage artwork, statement decor pieces, or unique gifts, we have something for everyone. </p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-chat-square-text"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Visit Us Today!</h3>
+              </a>
+              <p>Find your next treasure at Classic Thrift Boutique. Our friendly staff is ready to help you find pieces that fit your personality, budget and lifestyle. Stop by our boutique, browse our collection, and take home a piece of timeless style! </p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="section clients">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2> Clients</h2>
+        <p> Our team is passionate about finding unique, one-of-a-kind pieces that make you look and feel incredible. With a keen eye for fashion and a commitment to quality, we’re here to help you find pieces that suit your style, enhance your wardrobe, and bring joy to your shopping experience.</p>
+      </div> <!-- End Section Title -->
+
+      <!-- <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>-->
+
+    </section><!-- /Clients Section -->
+
+  </main>
+
+
+</body>
+
+
+{% endblock %}

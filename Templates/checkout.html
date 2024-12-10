@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container mt-5">
+    <h2>Checkout</h2>
+    <p>Total Amount: Ksh {{ total_price }}</p>
+    <form action="{% url 'checkout' %}" method="post">
+        {% csrf_token %}
+        <a href="{% url 'pay' %}" class="btn btn-outline-secondary btn-sm">Pay Now</a>
+    </form>
+</div>
+{% endblock %}
